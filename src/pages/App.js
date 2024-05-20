@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import gitLogo from '../assets/github.png'
 import Input from '../components/Input';
@@ -36,7 +35,10 @@ function App() {
   const handleRemoveRepo = (id) => {
     console.log('Removendo registro', id);
 
-    // utilizar filter.
+    // Remove o repositório com o ID fornecido
+    const updatedRepos = repos.filter(repo => repo.id !== id);
+    // Atualiza o estado com a nova lista de repositórios
+    setRepos(updatedRepos);
   }
 
 
